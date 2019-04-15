@@ -4,10 +4,10 @@ This is an implementation of a two-pass-linker in Java.
 
 The target machine is word addressable and has a memory of 300 words, each consisting of 4 decimal digits. The ﬁrst (leftmost) digit is the opcode, which is unchanged by the linker. The remaining three digits (called the address ﬁeld) form either 
 
-• An immediate operand, which is unchanged. 
-• An absolute address, which is unchanged. 
-• A relative address, which is relocated. 
-• An external address, which is resolved. 
+* An immediate operand, which is unchanged. 
+* An absolute address, which is unchanged. 
+* A relative address, which is relocated. 
+* An external address, which is resolved. 
 
 Relocating relative addresses and resolving external references were discussed in class and are in the notes. The input consists of a series of object modules, each of which contains three parts: deﬁnition list, use list, and program text. 
 
@@ -23,12 +23,14 @@ The program text consists of a count NT (Number of Text entries) followed by NT 
 
 Your program must check the input for the errors listed below. All error messages produced must be informative, e.g., “Error: X21 was used but not deﬁned. It has been given the value 111”. 
 
-• If a symbol is multiply deﬁned, print an error message and use the value given in the last deﬁnition. 
-• If a symbol is used but not deﬁned, print an error message and use the value 111. 
-• If a symbol is deﬁned but not used, print a warning message and continue. 
-• If an absolute address exceeds the size of the machine, print an error message and use the largest legal value. 
-• If multiple symbols are listed as used in the same instruction, print an error message and ignore all but the last usage given. 
-• If an address appearing in a deﬁnition exceeds the size of the module, print an error message and treat the address given as the last word in the module. You may need to set “arbitrary limits”, for example you may wish to limit the number of characters in a symbol to (say) 8. Any such limits should be clearly documented in the program and if the input fails to meet your limits, your program must print an error message and continue if possible. Naturally, the limits must be large enough for all the inputs on the web. Under no circumstances should your program reference an array out of bounds, etc. Submit the source code for your lab, together with a README ﬁle (required) describing how to compile and run it. Your program must read an input set from standard input, i.e., directly from the keyboard. It is an error for you to require the input be in a ﬁle. You may develop your lab on any machine you wish, but must insure that it compiles and runs on the NYU system assigned to the course.
+* If a symbol is multiply deﬁned, print an error message and use the value given in the last deﬁnition. 
+* If a symbol is used but not deﬁned, print an error message and use the value 111. 
+* If a symbol is deﬁned but not used, print a warning message and continue. 
+* If an absolute address exceeds the size of the machine, print an error message and use the largest legal value. 
+* If multiple symbols are listed as used in the same instruction, print an error message and ignore all but the last usage given. 
+* If an address appearing in a deﬁnition exceeds the size of the module, print an error message and treat the address given as the last word in the module. 
+
+You may need to set “arbitrary limits”, for example you may wish to limit the number of characters in a symbol to (say) 8. Any such limits should be clearly documented in the program and if the input fails to meet your limits, your program must print an error message and continue if possible. Naturally, the limits must be large enough for all the inputs on the web. Under no circumstances should your program reference an array out of bounds, etc. Submit the source code for your lab, together with a README ﬁle (required) describing how to compile and run it. Your program must read an input set from standard input, i.e., directly from the keyboard. It is an error for you to require the input be in a ﬁle. You may develop your lab on any machine you wish, but must insure that it compiles and runs on the NYU system assigned to the course.
 
 There are several sample input sets on the web. The ﬁrst is shown below and the second is an re-formatted version of the ﬁrst. If you use the java Scanner or C’s scanf() inputs 1 and 2 should look the same to your program. Some of the input sets contain errors that you are to detect as described above. We will run your lab on these (and other) input sets. The expected output is also on the web.
 
